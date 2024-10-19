@@ -2,7 +2,7 @@
 Examples of Mermaid diagram that represents programs
 
 
-Mermaid diagram that contains subgraph  
+## Flowchart with subgraph  
 Repo:
 https://github.com/WingTillDie/battery-level-wsl/tree/main
 
@@ -26,7 +26,7 @@ flowchart TD
 ```
 
 
-Mermaid diagram that contains link label  
+## Flowchart with link label  
 Repo:
 https://github.com/WingTillDie/warn-no-network-windows
 ```mermaid
@@ -48,4 +48,17 @@ flowchart TD
     Pause --> join
     join(( ))
     join --> Forever
+```
+
+## Entity Relationship Diagram  
+Repo:
+https://github.com/WingTillDie/youtube-video-length
+```mermaid
+erDiagram
+    "All YouTube Videos" ||..o| "YouTube Videos with Matched Length" : "contains"
+    "All YouTube Videos" ||..o| "YouTube Videos with Specified Search String" : "contains"
+    "YouTube Videos with Specified Search String" ||..o| "YouTube Videos with Specified Search String, Top 100 Results": "contains"
+    "YouTube Videos with Specified Search String, Top 100 Results" ||..o| "YouTube Videos with Specified Search String, Top 100 Results, with Match Length" : "contains"
+    "YouTube Videos with Specified Search String, Top 100 Results" ||..o| "YouTube Videos with Specified Search String, Top 100 Results, with Not Match Length" : "contains"
+    "YouTube Videos with Matched Length" ||..o| "YouTube Videos with Specified Search String, Top 100 Results, with Match Length" : "contains"
 ```
